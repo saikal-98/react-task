@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import Section from "./components/Section";
+import Footer from "./components/Footer";
 
-function App() {
+const App = () => {
+  let [users, setUsers] = useState([
+    { id: 1, name: "John", lastName: "Smith", age: 26 },
+    { id: 2, name: "Amelia", lastName: "Brown", age: 25 },
+    { id: 3, name: "Emily", lastName: "Walker", age: 17 },
+    { id: 4, name: "Harry", lastName: "Johnson", age: 30 },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Section users={users} />
+      <Footer />
     </div>
   );
-}
+};
 
 export default App;
